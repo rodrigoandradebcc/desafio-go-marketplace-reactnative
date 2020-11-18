@@ -51,8 +51,8 @@ const Cart: React.FC = () => {
   const cartTotal = useMemo(() => {
     // TODO RETURN THE SUM OF THE QUANTITY OF THE PRODUCTS IN THE CART
 
-    const total = products.reduce(( accumulator, product ) => {
-      const productsSubtotal = product.price + product.quantity;
+    const total = products.reduce((accumulator, product) => {
+      const productsSubtotal = product.price * product.quantity;
 
       return accumulator + productsSubtotal;
     }, 0);
@@ -63,7 +63,7 @@ const Cart: React.FC = () => {
   const totalItensInCart = useMemo(() => {
     // TODO RETURN THE SUM OF THE QUANTITY OF THE PRODUCTS IN THE CART
 
-    const total = products.reduce(( accumulator, product ) => {
+    const total = products.reduce((accumulator, product) => {
       const productsQuantity = product.quantity;
 
       return accumulator + productsQuantity;
@@ -103,6 +103,7 @@ const Cart: React.FC = () => {
               </ProductTitleContainer>
               <ActionContainer>
                 <ActionButton
+
                   testID={`increment-${item.id}`}
                   onPress={() => handleIncrement(item.id)}
                 >

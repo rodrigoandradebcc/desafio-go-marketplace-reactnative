@@ -48,7 +48,7 @@ const CartProvider: React.FC = ({ children }) => {
 
     if (productExists) {
       setProducts(
-        products.map(p => product.id ? { ...product, quantity: p.quantity + 1 } : p
+        products.map(p => p.id === product.id ? { ...product, quantity: p.quantity + 1 } : p
         ),
       );
     } else {
@@ -67,6 +67,7 @@ const CartProvider: React.FC = ({ children }) => {
       product => product.id === id
         ? { ...product, quantity: product.quantity + 1 }
         : product,
+
     );
 
     setProducts(newProducts);
