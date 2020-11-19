@@ -112,6 +112,7 @@ const Cart: React.FC = () => {
                 <ActionButton
                   testID={`decrement-${item.id}`}
                   onPress={() => handleDecrement(item.id)}
+
                 >
                   <FeatherIcon name="minus" color="#E83F5B" size={16} />
                 </ActionButton>
